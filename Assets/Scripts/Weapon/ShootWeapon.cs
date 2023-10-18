@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
+using UnityEngine.VFX;
 
 public class ShootWeapon : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class ShootWeapon : MonoBehaviour
 
     [SerializeField] private int defaultCapacity = 90;
     [SerializeField] private int maxSize = 180;
+
+    [SerializeField] private VisualEffect muzzleVisualEffect;
 
     // throw an exception if we try to return an existing item, already in the pool
     [SerializeField] private bool collectionCheck = true;
@@ -47,6 +50,8 @@ public class ShootWeapon : MonoBehaviour
 
             bullet.transform.SetPositionAndRotation(muzzlePosition.transform.position, Quaternion.identity);
             bullet.body.AddForce(bullet.transform.forward * muzzleVelocity, ForceMode.Acceleration);
+
+            muzzleVisualEffect.Play();
 
             bullet.Deactivate();
             nextTimeToShoot = Time.time + cooldownWindow;
