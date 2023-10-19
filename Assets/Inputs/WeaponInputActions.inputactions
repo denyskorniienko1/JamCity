@@ -1,0 +1,34 @@
+{
+    "name": "RiffleInputActions",
+    "maps": [
+        {
+            "name": "Riffle",
+            "id": "2838fef4-46df-41f6-be99-7f363f8bf4d7",
+            "actions": [
+                {
+                    "name": "Fire Start",
+                    "type": "Button",
+                    "id": "c8bcf6eb-7359-42d8-b515-2afe4cbbecd9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ff28afdf-37ab-44ba-a4e4-71ab7727b85e",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
