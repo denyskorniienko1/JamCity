@@ -20,28 +20,24 @@ public class ShootWeapon : MonoBehaviour
     [SerializeField] private bool collectionCheck = true;
 
     private ObjectPool<Projectile> projectilePool;
+    private bool isShooting;
     private float nextTimeToShoot;
 
     // Start is called before the first frame update
     void Awake()
     {
-        projectilePool = new ObjectPool<Projectile>(CreateProjectile, 
-            OnGetFromPool, 
-            OnReleaseToPool, 
+        projectilePool = new ObjectPool<Projectile>(CreateProjectile,
+            OnGetFromPool,
+            OnReleaseToPool,
             OnDestroyPooledObject,
             collectionCheck,
             defaultCapacity,
             maxSize);
     }
 
-    public void Update()
-    {
-        Shoot();
-    }
-
     public void Shoot()
     {
-        if (Input.GetMouseButton(0) && Time.time > nextTimeToShoot && projectilePool != null)
+        if (Time.time > nextTimeToShoot && projectilePool != null)
         {
             var bullet = projectilePool.Get();
 

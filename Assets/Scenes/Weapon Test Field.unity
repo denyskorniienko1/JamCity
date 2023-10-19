@@ -445,8 +445,8 @@ VisualEffect:
   m_GameObject: {fileID: 1045596561}
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 9df34cef9d1efda46bcaad8eb59cc825, type: 3}
-  m_InitialEventName: OnPlay
-  m_InitialEventNameOverriden: 0
+  m_InitialEventName: Other
+  m_InitialEventNameOverriden: 1
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
   m_AllowInstancing: 1
@@ -482,13 +482,18 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045596561}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.425, y: 0.339, z: 0.342}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.07170001, z: 0.4699}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1963509988}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1963509988 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4882608361176899160, guid: bef9d28034b4f6f4eb02cfa27a7a1100, type: 3}
+  m_PrefabInstance: {fileID: 8586131867188726262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &37160760389077672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -540,6 +545,10 @@ PrefabInstance:
     - target: {fileID: 9108563082315907185, guid: b24dd8fc71933e54a9b012a6e31c4c73, type: 3}
       propertyPath: m_Name
       value: blasterC
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108563082315907185, guid: b24dd8fc71933e54a9b012a6e31c4c73, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -594,15 +603,91 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7396249717560318700, guid: bef9d28034b4f6f4eb02cfa27a7a1100, type: 3}
+      propertyPath: muzzleVelocity
+      value: 1400
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396249717560318700, guid: bef9d28034b4f6f4eb02cfa27a7a1100, type: 3}
+      propertyPath: muzzleVisualEffect
+      value: 
+      objectReference: {fileID: 1045596563}
     - target: {fileID: 8328016813100541453, guid: bef9d28034b4f6f4eb02cfa27a7a1100, type: 3}
       propertyPath: m_Name
       value: blasterP
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4882608361176899160, guid: bef9d28034b4f6f4eb02cfa27a7a1100, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1045596564}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8328016813100541453, guid: bef9d28034b4f6f4eb02cfa27a7a1100, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8586131867188726264}
   m_SourcePrefab: {fileID: 100100000, guid: bef9d28034b4f6f4eb02cfa27a7a1100, type: 3}
+--- !u!1 &8586131867188726263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8328016813100541453, guid: bef9d28034b4f6f4eb02cfa27a7a1100, type: 3}
+  m_PrefabInstance: {fileID: 8586131867188726262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8586131867188726264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586131867188726263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: a5b7c0deeb4a10e4f97bdaf625ed1dfe, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8586131867188726265}
+        m_TargetAssemblyTypeName: ShootWeapon, Assembly-CSharp
+        m_MethodName: StartBurstShoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c8bcf6eb-7359-42d8-b515-2afe4cbbecd9
+    m_ActionName: Riffle/Fire Start[/Mouse/leftButton]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Riffle
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &8586131867188726265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7396249717560318700, guid: bef9d28034b4f6f4eb02cfa27a7a1100, type: 3}
+  m_PrefabInstance: {fileID: 8586131867188726262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586131867188726263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f6f1fe2e20fc449b4b3aff32f438a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8693410320035312928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -676,6 +761,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: blasterG
       objectReference: {fileID: 0}
+    - target: {fileID: 5298343079298248852, guid: 2e8e6b43e0efc994fb8d0f5d0a46473e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5462173253271097085, guid: 2e8e6b43e0efc994fb8d0f5d0a46473e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.213
@@ -731,4 +820,3 @@ SceneRoots:
   - {fileID: 8586131867188726262}
   - {fileID: 8779805663980970797}
   - {fileID: 37160760389077672}
-  - {fileID: 1045596564}
