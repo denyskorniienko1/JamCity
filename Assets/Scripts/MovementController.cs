@@ -1,3 +1,4 @@
+using System.Drawing;
 using UnityEngine;
 
 public class MovementController : MonoBehaviour
@@ -39,20 +40,8 @@ public class MovementController : MonoBehaviour
 
     private void LookAtCursor()
     {
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-        float rayDistance;
-
-        if(groundPlane.Raycast(ray, out rayDistance))
-        {
-            Vector3 point = ray.GetPoint(rayDistance);
-
-            Debug.DrawLine(ray.origin, point, Color.red);
-
-            lookAtPoint = new Vector3(point.x, transform.position.y, point.z);
-
-            transform.LookAt(lookAtPoint);
-        }
+        lookAtPoint = MouseUtills.GetMousePositionInTheWorld(mainCamera, transform.position.y);
+        transform.LookAt(lookAtPoint);
     }
 
     public Vector3 GetInputVector()

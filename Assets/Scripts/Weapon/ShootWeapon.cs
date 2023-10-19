@@ -6,8 +6,9 @@ using UnityEngine.VFX;
 
 public class ShootWeapon : MonoBehaviour
 {
+    public Transform muzzlePosition;
+
     [SerializeField] private Projectile projectilePrefab;
-    [SerializeField] private Transform muzzlePosition;
     [SerializeField] private float muzzleVelocity = 700f;
     [SerializeField] private float cooldownWindow = 0.1f;
 
@@ -35,7 +36,7 @@ public class ShootWeapon : MonoBehaviour
             maxSize);
     }
 
-    public void Shoot()
+    public void Shoot(Vector3 direction)
     {
         if (Time.time > nextTimeToShoot && projectilePool != null)
         {
@@ -45,7 +46,7 @@ public class ShootWeapon : MonoBehaviour
                 return;
 
             bullet.transform.SetPositionAndRotation(muzzlePosition.transform.position, Quaternion.identity);
-            bullet.body.AddForce(bullet.transform.forward * muzzleVelocity, ForceMode.Acceleration);
+            bullet.body.AddForce(direction * muzzleVelocity, ForceMode.Acceleration);
 
             muzzleVisualEffect.Play();
 

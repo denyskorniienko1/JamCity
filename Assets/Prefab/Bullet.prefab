@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 421260340965632355}
+  trailRenderer: {fileID: 5377281835977971217}
   timeoutDelay: 1
 --- !u!54 &421260340965632355
 Rigidbody:

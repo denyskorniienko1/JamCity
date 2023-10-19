@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public Rigidbody body;
     public ObjectPool<Projectile> pool;
+    public TrailRenderer trailRenderer;
 
     [SerializeField] private float timeoutDelay = 3f;
 
@@ -21,6 +22,7 @@ public class Projectile : MonoBehaviour
         // reset the moving Rigidbody
         body.velocity = new Vector3(0f, 0f, 0f);
         body.angularVelocity = new Vector3(0f, 0f, 0f);
+        trailRenderer.Clear();
 
         // release the projectile back to the pool
         pool.Release(this);
