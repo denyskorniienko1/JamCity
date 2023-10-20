@@ -36,6 +36,14 @@ public class PlayerInputWeaponController : MonoBehaviour
         }
     }
 
+    public void Reload(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            weapon.Reload();
+        }
+    }
+
     private IEnumerator StartBurstShooting()
     {
         while (burstShootingMode)

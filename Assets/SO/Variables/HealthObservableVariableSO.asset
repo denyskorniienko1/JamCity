@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: HealthObservableVariableSO
   m_EditorClassIdentifier: 
   InitialValue: 100
+  HasMax: 1
+  MaxValue: 100
   Event: {fileID: 11400000, guid: 55cd859815256a84094d81c30d617297, type: 2}

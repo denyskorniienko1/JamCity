@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: RiffleMagazineObservableVariableSO
   m_EditorClassIdentifier: 
   InitialValue: 32
+  HasMax: 1
+  MaxValue: 32
   Event: {fileID: 11400000, guid: 58f9ddd29ecc1214e813dd48ae671fa1, type: 2}

@@ -345,6 +345,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c8bcf6eb-7359-42d8-b515-2afe4cbbecd9
     m_ActionName: Riffle/Fire Start[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5405514645097060581}
+        m_TargetAssemblyTypeName: PlayerInputWeaponController, Assembly-CSharp
+        m_MethodName: Reload
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9ddc5b4d-fee6-4463-adb0-594a923da568
+    m_ActionName: Riffle/Reload[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Riffle

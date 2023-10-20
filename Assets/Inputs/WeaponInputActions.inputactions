@@ -1,5 +1,5 @@
 {
-    "name": "RiffleInputActions",
+    "name": "WeaponInputActions",
     "maps": [
         {
             "name": "Riffle",
@@ -9,6 +9,15 @@
                     "name": "Fire Start",
                     "type": "Button",
                     "id": "c8bcf6eb-7359-42d8-b515-2afe4cbbecd9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Reload",
+                    "type": "Button",
+                    "id": "9ddc5b4d-fee6-4463-adb0-594a923da568",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -24,6 +33,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Fire Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "daf57faa-9b46-4e92-8893-2884a5fad1cc",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reload",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

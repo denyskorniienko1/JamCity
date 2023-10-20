@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: RiffleAmmoTotalObservableVariableSO
   m_EditorClassIdentifier: 
   InitialValue: 32
-  Event: {fileID: 11400000, guid: 58f9ddd29ecc1214e813dd48ae671fa1, type: 2}
+  HasMax: 1
+  MaxValue: 64
+  Event: {fileID: 11400000, guid: f2e52fc798dc15643841e10a3fde8647, type: 2}

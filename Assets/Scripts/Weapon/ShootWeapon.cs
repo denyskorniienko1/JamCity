@@ -63,9 +63,20 @@ public class ShootWeapon : MonoBehaviour
 
     public void Reload()
     {
-        if(totalCount.RuntimeValue > 0)
+        if(totalCount.RuntimeValue > 0 && magazineCount.RuntimeValue < magazineCount.MaxValue)
         {
-            
+            var neededToAdd = magazineCount.MaxValue - magazineCount.RuntimeValue;
+
+            if(neededToAdd <= totalCount.RuntimeValue) 
+            {
+                magazineCount.RuntimeValue = magazineCount.RuntimeValue + neededToAdd;
+                totalCount.RuntimeValue = totalCount.RuntimeValue - neededToAdd;
+            }
+            else
+            {
+                magazineCount.RuntimeValue = totalCount.RuntimeValue;
+                totalCount.RuntimeValue = 0;
+            }
         }
     }
 
