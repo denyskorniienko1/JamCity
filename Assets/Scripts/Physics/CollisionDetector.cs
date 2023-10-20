@@ -8,5 +8,6 @@ public class CollisionDetector : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         OnCollisionDetected.Invoke(collision);
+        Debug.Log(collision.gameObject.name);
     }
 }
