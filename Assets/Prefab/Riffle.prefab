@@ -278,9 +278,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f6f1fe2e20fc449b4b3aff32f438a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1799576766025353497, guid: 0c4da994c122ce04b8312ff4d96ce160, type: 3}
   muzzlePosition: {fileID: 8302353523515697668}
-  muzzleVelocity: 4000
+  projectilePrefab: {fileID: 1799576766025353497, guid: 0c4da994c122ce04b8312ff4d96ce160, type: 3}
+  magazineCount: {fileID: 11400000, guid: 9989b7cdde9b0e048bd161fb2919f7b4, type: 2}
+  totalCount: {fileID: 11400000, guid: c2a13e7c143a1cb428d7420e71f1a636, type: 2}
+  muzzleVelocity: 1000
   cooldownWindow: 0.1
   defaultCapacity: 90
   maxSize: 180
@@ -299,6 +301,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 7396249717560318700}
+  MinShootDistance: 2
+  distanceToMousePoint: 0
+  angle: 0
 --- !u!114 &1738500630444467529
 MonoBehaviour:
   m_ObjectHideFlags: 0

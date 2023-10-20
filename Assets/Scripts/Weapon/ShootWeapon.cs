@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.VFX;
+using static Unity.VisualScripting.Member;
 
 public class ShootWeapon : MonoBehaviour
 {
     public Transform muzzlePosition;
 
     [SerializeField] private Projectile projectilePrefab;
+    [SerializeField] private IntObservableVariableSO magazineCount;
+    [SerializeField] private IntObservableVariableSO totalCount;
     [SerializeField] private float muzzleVelocity = 700f;
     [SerializeField] private float cooldownWindow = 0.1f;
 
@@ -25,7 +28,7 @@ public class ShootWeapon : MonoBehaviour
     private float nextTimeToShoot;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         projectilePool = new ObjectPool<Projectile>(CreateProjectile,
             OnGetFromPool,
@@ -34,11 +37,13 @@ public class ShootWeapon : MonoBehaviour
             collectionCheck,
             defaultCapacity,
             maxSize);
+        magazineCount.OnGameRun();
+        totalCount.OnGameRun();
     }
 
     public void Shoot(Vector3 direction)
     {
-        if (Time.time > nextTimeToShoot && projectilePool != null)
+        if (Time.time > nextTimeToShoot && projectilePool != null && magazineCount.RuntimeValue > 0)
         {
             var bullet = projectilePool.Get();
 
@@ -46,12 +51,21 @@ public class ShootWeapon : MonoBehaviour
                 return;
 
             bullet.transform.SetPositionAndRotation(muzzlePosition.transform.position, Quaternion.identity);
-            bullet.body.AddForce(direction * muzzleVelocity, ForceMode.Acceleration);
+            bullet.body.AddForce(direction.normalized * muzzleVelocity, ForceMode.Acceleration);
 
             muzzleVisualEffect.Play();
+            magazineCount.RuntimeValue--;
 
             bullet.Deactivate();
             nextTimeToShoot = Time.time + cooldownWindow;
+        }
+    }
+
+    public void Reload()
+    {
+        if(totalCount.RuntimeValue > 0)
+        {
+            
         }
     }
 

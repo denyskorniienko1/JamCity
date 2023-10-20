@@ -7,6 +7,8 @@ public class Projectile : MonoBehaviour
     public Rigidbody body;
     public ObjectPool<Projectile> pool;
     public TrailRenderer trailRenderer;
+    public MeshRenderer meshRenderer;
+    public Collider collider;
 
     [SerializeField] private float timeoutDelay = 3f;
 
@@ -15,16 +17,30 @@ public class Projectile : MonoBehaviour
         StartCoroutine(DeactivateRoutine(timeoutDelay));
     }
 
-    IEnumerator DeactivateRoutine(float delay)
+    public void DeactivateImmediately()
     {
-        yield return new WaitForSeconds(delay);
-
         // reset the moving Rigidbody
         body.velocity = new Vector3(0f, 0f, 0f);
         body.angularVelocity = new Vector3(0f, 0f, 0f);
         trailRenderer.Clear();
+        meshRenderer.enabled = true;
+        collider.enabled = true;    
 
         // release the projectile back to the pool
         pool.Release(this);
+    }
+
+    public void StopFlight()
+    {
+        body.velocity = Vector3.zero;
+        meshRenderer.enabled = false;
+        collider.enabled = false;
+    }
+
+    IEnumerator DeactivateRoutine(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        DeactivateImmediately();
     }
 }
