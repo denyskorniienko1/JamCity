@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class SOBasedHealth : HealthBase
 {
     public FloatObservableVariableSO FloatObservableVariable;
 
@@ -13,19 +13,19 @@ public class Health : MonoBehaviour
         FloatObservableVariable.OnGameRun();
     }
 
-    public void Add(float value)
+    public override void Add(float value)
     {
         if (isDead) return;
 
         FloatObservableVariable.RuntimeValue += value;
     }
 
-    public void Remove(float value)
+    public override void Remove(float value)
     {
         if (isDead) return;
 
         FloatObservableVariable.RuntimeValue -= value;
-        if(FloatObservableVariable.RuntimeValue < 0)
+        if (FloatObservableVariable.RuntimeValue < 0)
         {
             OnDie.Raise();
             isDead = true;

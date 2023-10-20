@@ -8,7 +8,7 @@ public class CollisionDamageHandler : MonoBehaviour
 
     public void Handle(Collision collision)
     {
-        var health = collision.gameObject.GetComponent<Health>();
+        var health = collision.gameObject.GetComponent<HealthBase>();
         if ( health != null)
         {
             health.Remove(Damage.InitialValue);
