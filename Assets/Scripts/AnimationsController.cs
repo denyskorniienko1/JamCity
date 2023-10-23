@@ -23,14 +23,14 @@ public class AnimationsController : MonoBehaviour
 
     private void Update()
     {
+        if (isDead)
+            return;
+
         UpdateAnimator();
     }
 
     private void UpdateAnimator()
     {
-        if (isDead)
-            return;
-
         float forwardBackwardsMagnitude = 0;
         float rightLeftMagnitude = 0;
 
@@ -52,7 +52,7 @@ public class AnimationsController : MonoBehaviour
         animator.SetFloat(animHorizontal, rightLeftMagnitude);
     }
 
-    public void TriggerDeathAnimation()
+    public void OnDeath()
     {
         isDead = true;
 

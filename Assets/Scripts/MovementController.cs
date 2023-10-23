@@ -14,14 +14,21 @@ public class MovementController : MonoBehaviour
     private Vector3 lookAtPoint;
     private Vector3 inputVector;
 
+    private bool isDead;
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
         mainCamera = Camera.main;
+
+        isDead = false;
     }
 
     private void Update()
     {
+        if (isDead)
+            return;
+
         MoveCharacter();
         LookAtCursor();
     }
@@ -52,5 +59,10 @@ public class MovementController : MonoBehaviour
     public Vector3 GetLookAtPoint()
     {
         return lookAtPoint;
+    }
+
+    public void OnDeath()
+    {
+        isDead = true;
     }
 }
