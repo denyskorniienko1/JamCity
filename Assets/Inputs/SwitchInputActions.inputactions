@@ -1,0 +1,34 @@
+{
+    "name": "SwitchInputActions",
+    "maps": [
+        {
+            "name": "SwitchMap",
+            "id": "dbe55d6e-bd07-45e2-9c64-a3446a18ab9e",
+            "actions": [
+                {
+                    "name": "Switch",
+                    "type": "PassThrough",
+                    "id": "ef973db8-efa6-4c03-b4a0-12c599527795",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "30e4bc55-2650-4e8f-8d05-ce170ac765d6",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

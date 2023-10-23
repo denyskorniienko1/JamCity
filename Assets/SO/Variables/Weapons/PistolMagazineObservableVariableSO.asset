@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba6ae6737de92f46b9d12f9a94c3be9, type: 3}
+  m_Name: PistolMagazineObservableVariableSO
+  m_EditorClassIdentifier: 
+  InitialValue: 8
+  HasMax: 1
+  MaxValue: 16
+  Event: {fileID: 11400000, guid: 0058b9518fa8d6849a7fe00b6de67d34, type: 2}

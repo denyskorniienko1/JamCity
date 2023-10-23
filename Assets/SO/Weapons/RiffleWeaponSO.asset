@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6559e4e7c63e8f344881a1d896acb1ea, type: 3}
+  m_Name: RiffleWeaponSO
+  m_EditorClassIdentifier: 
+  MagazineCount: {fileID: 11400000, guid: 9989b7cdde9b0e048bd161fb2919f7b4, type: 2}
+  TotalCount: {fileID: 11400000, guid: c2a13e7c143a1cb428d7420e71f1a636, type: 2}
+  MuzzleVelocity: 1000
+  CooldownWindow: 0.1
+  BulletPoolDefaultCapacity: 90
+  BulletPoolMaxSize: 180
