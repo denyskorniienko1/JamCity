@@ -13,5 +13,14 @@ public class CollisionDamageHandler : MonoBehaviour
         {
             health.Remove(Damage.InitialValue);
         }
+
+    }
+    public void Handle(Collider collider)
+    {
+        var health = collider.gameObject.GetComponent<HealthBase>();
+        if (health != null && collider.tag == "Player")
+        {
+            health.Remove(Damage.InitialValue);
+        }
     }
 }

@@ -839,6 +839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdcf22fc550fc3a428677631fd6018b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RoomId: 0
 --- !u!114 &1079893545983903693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1425,7 +1426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e879f17f36290074b868bee080a6375c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: {fileID: 11400000, guid: aa5b4ca737745d94aaa9e7d645bff791, type: 2}
+  Damage: {fileID: 11400000, guid: 3a56e85157344f5439b5b72e37a02edb, type: 2}
 --- !u!1 &7718091680349432381
 GameObject:
   m_ObjectHideFlags: 0

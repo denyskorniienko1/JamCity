@@ -7,7 +7,9 @@ public class RougeLogic : MonoBehaviour
 {
     public GameObject crossbow;
     public GameObject projectilePrefab;
+    public int RoomId;
 
+    private GameManagerM01 gameManager;
     private float arrowVelocity = 600f;
     private NavMeshAgent agent;
     private Animator anim;
@@ -17,6 +19,7 @@ public class RougeLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerM01>();
         anim = this.GetComponent<Animator>();
         agent = this.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -42,7 +45,7 @@ public class RougeLogic : MonoBehaviour
         Vector3 thisPos = this.transform.position;
         thisPos.y = 1;
         float distance = Vector3.Distance(playerPos, thisPos);
-        if (distance < 30 && !isDead)
+        if (gameManager.PlayerRoomId == RoomId && !isDead)
         {
             RaycastHit ray;
             bool hit = Physics.Raycast(thisPos, (playerPos - thisPos), out ray,  30);
@@ -67,6 +70,10 @@ public class RougeLogic : MonoBehaviour
                 agent.isStopped = false;
                 anim.SetBool("Shot", false);
             }
+        }
+        else if (!isDead)
+        {
+            agent.isStopped = true;
         }
     }
 
