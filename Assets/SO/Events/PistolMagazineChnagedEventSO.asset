@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dbf098ef71c58f46b5302f7ad0f3a02, type: 3}
-  m_Name: HealthObservableVariableSO
+  m_Script: {fileID: 11500000, guid: 6138b26dcc155fd4383441e9db43e80c, type: 3}
+  m_Name: PistolMagazineChnagedEventSO
   m_EditorClassIdentifier: 
-  InitialValue: 30
-  HasMax: 1
-  MaxValue: 100
-  Event: {fileID: 11400000, guid: 55cd859815256a84094d81c30d617297, type: 2}

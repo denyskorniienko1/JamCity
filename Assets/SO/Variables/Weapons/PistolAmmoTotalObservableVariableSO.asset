@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dbf098ef71c58f46b5302f7ad0f3a02, type: 3}
-  m_Name: HealthObservableVariableSO
+  m_Script: {fileID: 11500000, guid: eba6ae6737de92f46b9d12f9a94c3be9, type: 3}
+  m_Name: PistolAmmoTotalObservableVariableSO
   m_EditorClassIdentifier: 
-  InitialValue: 30
+  InitialValue: 16
   HasMax: 1
-  MaxValue: 100
-  Event: {fileID: 11400000, guid: 55cd859815256a84094d81c30d617297, type: 2}
+  MaxValue: 32
+  Event: {fileID: 11400000, guid: f7bf915e3a401cf49b9e0f82dca61e7d, type: 2}

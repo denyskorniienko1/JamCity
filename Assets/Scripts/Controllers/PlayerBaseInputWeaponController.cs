@@ -1,40 +1,37 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInputWeaponController : MonoBehaviour
+public abstract class PlayerBaseInputWeaponController : MonoBehaviour
 {
-    [SerializeField] private ShootWeapon weapon;
+    private WeaponInputActions weaponInputActions;
+
+    [SerializeField] protected ShootWeapon weapon;
 
     [SerializeField] private float MinShootDistance = 2;
     [SerializeField] private float distanceToMousePoint;
     [SerializeField] private float angle;
-    private bool burstShootingMode;
 
-
-    public void SingleShoot(InputAction.CallbackContext context)
+    private void OnEnable()
     {
-        if (!CanShoot())
-            return;
-
-        if (context.started)
-            weapon.Shoot(GetShootDirection());
+        weaponInputActions = new WeaponInputActions();
+        weaponInputActions.Weapon.FireStart.started += Shoot;
+        weaponInputActions.Weapon.FireStart.performed += Shoot;
+        weaponInputActions.Weapon.FireStart.canceled += Shoot;
+        weaponInputActions.Weapon.Reload.started += Reload;
+        weaponInputActions.Enable();
     }
 
-    public void BurstShoot(InputAction.CallbackContext context)
+    private void OnDisable()
     {
-        if (context.started)
-        {
-            burstShootingMode = true;
-            StartCoroutine(StartBurstShooting());
-        }
-        else if (context.canceled)
-        {
-            burstShootingMode = false;
-        }
+        weaponInputActions.Weapon.FireStart.started -= Shoot;
+        weaponInputActions.Weapon.FireStart.performed -= Shoot;
+        weaponInputActions.Weapon.FireStart.canceled -= Shoot;
+        weaponInputActions.Weapon.Reload.started -= Reload;
+        weaponInputActions.Disable();
     }
+
+    public abstract void Shoot(InputAction.CallbackContext context);
 
     public void Reload(InputAction.CallbackContext context)
     {
@@ -44,22 +41,7 @@ public class PlayerInputWeaponController : MonoBehaviour
         }
     }
 
-    private IEnumerator StartBurstShooting()
-    {
-        while (burstShootingMode)
-        {
-            if (!CanShoot())
-            {
-                yield return null;
-                continue;
-            }
-
-            weapon.Shoot(GetShootDirection());
-            yield return null;
-        }
-    }
-
-    private Vector3 GetShootDirection()
+    protected Vector3 GetShootDirection()
     {
         var muzzleGlobalPosition = weapon.muzzlePosition.transform.TransformPoint(Vector3.zero);
         var mousePosition = MouseUtills.GetMousePositionInTheWorld(Camera.main, muzzleGlobalPosition.y);
@@ -68,7 +50,7 @@ public class PlayerInputWeaponController : MonoBehaviour
         return shootDirection;
     }
 
-    private bool CanShoot()
+    protected bool CanShoot()
     {
         var mousePosition = MouseUtills.GetMousePositionInTheWorld(Camera.main, transform.position.y);
         var directionToMouse = mousePosition - transform.position;

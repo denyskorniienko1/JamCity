@@ -10,13 +10,7 @@ public class ShootWeapon : MonoBehaviour
     public Transform muzzlePosition;
 
     [SerializeField] private Projectile projectilePrefab;
-    [SerializeField] private IntObservableVariableSO magazineCount;
-    [SerializeField] private IntObservableVariableSO totalCount;
-    [SerializeField] private float muzzleVelocity = 700f;
-    [SerializeField] private float cooldownWindow = 0.1f;
-
-    [SerializeField] private int defaultCapacity = 90;
-    [SerializeField] private int maxSize = 180;
+    [SerializeField] private WeaponSO weapon;
 
     [SerializeField] private VisualEffect muzzleVisualEffect;
 
@@ -35,15 +29,15 @@ public class ShootWeapon : MonoBehaviour
             OnReleaseToPool,
             OnDestroyPooledObject,
             collectionCheck,
-            defaultCapacity,
-            maxSize);
-        magazineCount.OnGameRun();
-        totalCount.OnGameRun();
+            weapon.BulletPoolDefaultCapacity,
+            weapon.BulletPoolMaxSize);
+        weapon.MagazineCount.OnGameRun();
+        weapon.TotalCount.OnGameRun();
     }
 
     public void Shoot(Vector3 direction)
     {
-        if (Time.time > nextTimeToShoot && projectilePool != null && magazineCount.RuntimeValue > 0)
+        if (Time.time > nextTimeToShoot && projectilePool != null && weapon.MagazineCount.RuntimeValue > 0)
         {
             var bullet = projectilePool.Get();
 
@@ -51,31 +45,31 @@ public class ShootWeapon : MonoBehaviour
                 return;
 
             bullet.transform.SetPositionAndRotation(muzzlePosition.transform.position, Quaternion.identity);
-            bullet.body.AddForce(direction.normalized * muzzleVelocity, ForceMode.Acceleration);
+            bullet.body.AddForce(direction.normalized * weapon.MuzzleVelocity, ForceMode.Acceleration);
 
             muzzleVisualEffect.Play();
-            magazineCount.RuntimeValue--;
+            weapon.MagazineCount.RuntimeValue--;
 
             bullet.Deactivate();
-            nextTimeToShoot = Time.time + cooldownWindow;
+            nextTimeToShoot = Time.time + weapon.CooldownWindow;
         }
     }
 
     public void Reload()
     {
-        if(totalCount.RuntimeValue > 0 && magazineCount.RuntimeValue < magazineCount.MaxValue)
+        if(weapon.TotalCount.RuntimeValue > 0 && weapon.MagazineCount.RuntimeValue < weapon.MagazineCount.MaxValue)
         {
-            var neededToAdd = magazineCount.MaxValue - magazineCount.RuntimeValue;
+            var neededToAdd = weapon.MagazineCount.MaxValue - weapon.MagazineCount.RuntimeValue;
 
-            if(neededToAdd <= totalCount.RuntimeValue) 
+            if(neededToAdd <= weapon.TotalCount.RuntimeValue) 
             {
-                magazineCount.RuntimeValue = magazineCount.RuntimeValue + neededToAdd;
-                totalCount.RuntimeValue = totalCount.RuntimeValue - neededToAdd;
+                weapon.MagazineCount.RuntimeValue = weapon.MagazineCount.RuntimeValue + neededToAdd;
+                weapon.TotalCount.RuntimeValue = weapon.TotalCount.RuntimeValue - neededToAdd;
             }
             else
             {
-                magazineCount.RuntimeValue = totalCount.RuntimeValue;
-                totalCount.RuntimeValue = 0;
+                weapon.MagazineCount.RuntimeValue = weapon.TotalCount.RuntimeValue;
+                weapon.TotalCount.RuntimeValue = 0;
             }
         }
     }

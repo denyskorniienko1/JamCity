@@ -2,7 +2,7 @@
     "name": "WeaponInputActions",
     "maps": [
         {
-            "name": "Riffle",
+            "name": "Weapon",
             "id": "2838fef4-46df-41f6-be99-7f363f8bf4d7",
             "actions": [
                 {

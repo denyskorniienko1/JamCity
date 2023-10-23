@@ -7,6 +7,13 @@ public class FloatSlider : MonoBehaviour
 {
     public Slider slider;
 
+    public VariableSO<float> FloatVariable;
+
+    public void Awake()
+    {
+        slider.maxValue = FloatVariable.MaxValue;
+    }
+
     public void Redraw(float value)
     {
         if (slider == null)
