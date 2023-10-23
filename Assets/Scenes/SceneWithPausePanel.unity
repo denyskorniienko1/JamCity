@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 286216958}
   - component: {fileID: 286216957}
   - component: {fileID: 286216956}
+  - component: {fileID: 286216960}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -385,6 +386,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &286216960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286216955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a18fd302919e147ac5c7af50a6bfc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customSoundtrack: 0
+  customSoundtrackAudio: {fileID: 0}
+  defaultVolume: 0.7
+  sound_click: {fileID: 8300000, guid: e66fa4a223464114b92005f0fe0751f7, type: 3}
+  sound_hover: {fileID: 8300000, guid: f0cee066cdd3637459120fbc8a38b953, type: 3}
+  sound_loadScene: {fileID: 0}
+  audioSource: {fileID: 0}
+  audioSourceSountrack: {fileID: 0}
+  demo_soundtrack: {fileID: 0}
+  demo_soundtrack_shorter: {fileID: 0}
+  volumeSlider: {fileID: 0}
 --- !u!1001 &296138508
 PrefabInstance:
   m_ObjectHideFlags: 0
