@@ -63,6 +63,7 @@ MonoBehaviour:
   trailRenderer: {fileID: 5377281835977971217}
   meshRenderer: {fileID: 745146153911606783}
   collider: {fileID: 473361111886791334}
+  sparkPrefab: {fileID: 353593328687256104, guid: 031f5e93f6044794aa4a82bb84a7f32a, type: 3}
   timeoutDelay: 1
 --- !u!54 &421260340965632355
 Rigidbody:
@@ -340,6 +341,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Projectile, Assembly-CSharp
         m_MethodName: DeactivateImmediately
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.005
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1799576766025353497}
+        m_TargetAssemblyTypeName: Projectile, Assembly-CSharp
+        m_MethodName: SpawnImpactFx
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
