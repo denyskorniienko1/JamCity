@@ -47,6 +47,11 @@ public class PlayerInputSwitchWeaponController : MonoBehaviour
 
     private void OnDisable()
     {
+        Disable();
+    }
+
+    public void Disable()
+    {
         switchInputActions.SwitchMap.Switch.performed -= Switch;
         switchInputActions.Disable();
     }

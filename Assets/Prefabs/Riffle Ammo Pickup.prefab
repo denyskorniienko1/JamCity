@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9073621267572725464}
   - component: {fileID: 5231899300897297285}
   - component: {fileID: 6954412781672034186}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AmmoBoxVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
