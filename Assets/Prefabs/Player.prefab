@@ -1405,6 +1405,7 @@ MonoBehaviour:
   - {fileID: 2371936127915294279}
   - {fileID: 8171712442618819781}
   currentWeaponIndex: 0
+  OnWeaponSwitched: {fileID: 11400000, guid: 3419ef2681f115a4aaff253629ebfc97, type: 2}
 --- !u!1 &5348127302910357271
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,10 +32,20 @@ public class EventListener<T> : MonoBehaviour
 
     public void OnEnable()
     {
-        Event.AddListener(this);
+        Subscribe();
     }
 
     public void OnDisable()
+    {
+        Unsubscribe();
+    }
+
+    public void Subscribe()
+    {
+        Event.AddListener(this);
+    }
+
+    public void Unsubscribe()
     {
         Event.RemoveListener(this);
     }

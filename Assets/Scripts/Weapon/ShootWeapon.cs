@@ -10,7 +10,7 @@ public class ShootWeapon : MonoBehaviour
     public Transform muzzlePosition;
 
     [SerializeField] private Projectile projectilePrefab;
-    [SerializeField] private WeaponSO weapon;
+    public WeaponSO weapon;
 
     [SerializeField] private VisualEffect muzzleVisualEffect;
 

@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 2870879615017003251}
   - component: {fileID: 6576372451030587723}
   - component: {fileID: 794631787097006558}
-  - component: {fileID: 2278434615206701300}
-  - component: {fileID: 6221932360162225555}
+  - component: {fileID: 5206558982244666427}
   m_Layer: 5
   m_Name: AmmoBar
   m_TagString: Untagged
@@ -64,7 +63,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MagazineText: {fileID: 3993443576663121950}
   TotalText: {fileID: 8258977167334196092}
---- !u!114 &2278434615206701300
+  magazineEventListener: {fileID: 3163489076351776670}
+  totalEventListener: {fileID: 1481253822243912187}
+--- !u!114 &5206558982244666427
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,7 +74,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1462075708829719697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c16c6607725316047888bc085ce7c5a0, type: 3}
+  m_Script: {fileID: 11500000, guid: f9a13777b3512cf4cafc0d9a330cf27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Response:
@@ -81,7 +82,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 794631787097006558}
         m_TargetAssemblyTypeName: AmmoBar, Assembly-CSharp
-        m_MethodName: UpdateMagazine
+        m_MethodName: UpdateWeapon
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -91,35 +92,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  Event: {fileID: 11400000, guid: 58f9ddd29ecc1214e813dd48ae671fa1, type: 2}
---- !u!114 &6221932360162225555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1462075708829719697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c16c6607725316047888bc085ce7c5a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 794631787097006558}
-        m_TargetAssemblyTypeName: AmmoBar, Assembly-CSharp
-        m_MethodName: UpdateTotal
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  Event: {fileID: 11400000, guid: f2e52fc798dc15643841e10a3fde8647, type: 2}
+  Event: {fileID: 11400000, guid: 3419ef2681f115a4aaff253629ebfc97, type: 2}
 --- !u!1 &2599402820306753959
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +460,7 @@ GameObject:
   - component: {fileID: 1628479757596445308}
   - component: {fileID: 678876603953140580}
   - component: {fileID: 8258977167334196092}
+  - component: {fileID: 1481253822243912187}
   m_Layer: 5
   m_Name: Total
   m_TagString: Untagged
@@ -610,6 +584,34 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1481253822243912187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4107958064348598612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16c6607725316047888bc085ce7c5a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 794631787097006558}
+        m_TargetAssemblyTypeName: AmmoBar, Assembly-CSharp
+        m_MethodName: UpdateTotal
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Event: {fileID: 11400000, guid: f2e52fc798dc15643841e10a3fde8647, type: 2}
 --- !u!1 &4877560692809960323
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,6 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 4175717545199340130}
+  FloatVariable: {fileID: 0}
 --- !u!114 &6020666469963447731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,6 +935,7 @@ GameObject:
   - component: {fileID: 3382294924654765579}
   - component: {fileID: 9042514838536664352}
   - component: {fileID: 3993443576663121950}
+  - component: {fileID: 3163489076351776670}
   m_Layer: 5
   m_Name: Magazine
   m_TagString: Untagged
@@ -1055,3 +1059,31 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3163489076351776670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9203924975724751778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16c6607725316047888bc085ce7c5a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 794631787097006558}
+        m_TargetAssemblyTypeName: AmmoBar, Assembly-CSharp
+        m_MethodName: UpdateMagazine
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Event: {fileID: 11400000, guid: 58f9ddd29ecc1214e813dd48ae671fa1, type: 2}

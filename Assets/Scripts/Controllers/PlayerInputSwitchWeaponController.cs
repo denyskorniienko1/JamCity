@@ -10,6 +10,15 @@ public class PlayerInputSwitchWeaponController : MonoBehaviour
 
     [SerializeField] private int currentWeaponIndex;
 
+    [SerializeField] private WeaponEventSO OnWeaponSwitched;
+
+
+    private void Awake()
+    {
+        if(currentWeapon != null)
+            OnWeaponSwitched.Raise(currentWeapon.weapon);
+    }
+
     private void OnEnable()
     {
         switchInputActions = new SwitchInputActions();
@@ -32,6 +41,7 @@ public class PlayerInputSwitchWeaponController : MonoBehaviour
             currentWeaponIndex = Mathf.Abs(currentWeaponIndex % weapons.Length);
             currentWeapon = weapons[currentWeaponIndex];
             currentWeapon.gameObject.SetActive(true);
+            OnWeaponSwitched.Raise(currentWeapon.weapon);
         }
     }
 
