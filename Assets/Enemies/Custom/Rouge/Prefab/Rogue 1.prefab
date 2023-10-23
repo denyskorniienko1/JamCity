@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crossbow: {fileID: 7595642462295522405}
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 7907700585112176908, guid: f8703045c0d649f45871047f6d50884e, type: 3}
 --- !u!114 &9173937289462242407
 MonoBehaviour:
   m_ObjectHideFlags: 0

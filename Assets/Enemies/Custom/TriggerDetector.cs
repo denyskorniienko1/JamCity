@@ -13,7 +13,6 @@ public class TriggerDetector : MonoBehaviour
         if (canHit && collider.tag.CompareTo("Player") == 0)
         {
             OnTriggerDetected.Invoke(collider);
-            Debug.Log(collider.gameObject.name);
             StartCoroutine(delayTrigger());
         }
     }

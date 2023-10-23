@@ -22,8 +22,7 @@ public class Arrow : MonoBehaviour
         body.velocity = new Vector3(0f, 0f, 0f);
         body.angularVelocity = new Vector3(0f, 0f, 0f);
         //trailRenderer.Clear();
-        meshRenderer.enabled = true;
-        collider.enabled = true;
+        gameObject.SetActive(false);
 
     }
 

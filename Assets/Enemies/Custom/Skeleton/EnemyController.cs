@@ -6,12 +6,16 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+    public int RoomId;
+
+    private GameManagerM01 gameManager;
     private NavMeshAgent agent;
     private Animator anim;
     private GameObject player;
     private bool isDead = false;
     void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerM01>();
         anim = this.GetComponent<Animator>();
         agent = this.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -41,7 +45,7 @@ public class EnemyController : MonoBehaviour
         Vector3 thisPos = this.transform.position;
         float distance = Vector3.Distance(playerPos, thisPos);
  
-        if (distance < 30 && !isDead)
+        if (gameManager.PlayerRoomId == RoomId && !isDead)
         {
             if(distance > 2)
             {
@@ -54,6 +58,10 @@ public class EnemyController : MonoBehaviour
                 anim.SetBool("Attack", true);
                 agent.isStopped = true;
             }
+        }
+        else if(!isDead)
+        {
+            agent.isStopped = true;
         }
     }
 
