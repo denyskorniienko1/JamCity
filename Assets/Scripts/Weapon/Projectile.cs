@@ -57,7 +57,7 @@ public class Projectile : MonoBehaviour
         impact.transform.forward = contact.normal;
         impact.transform.position = contact.point;
         impact.effect.Play();
-        //impact.Deactivate();
+        impact.Deactivate();
     }
 
     IEnumerator DeactivateRoutine(float delay)

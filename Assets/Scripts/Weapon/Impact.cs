@@ -26,6 +26,8 @@ public class Impact : MonoBehaviour
         // reset the moving Rigidbody
         transform.position = new Vector3(0f, 0f, 0f);
 
+        gameObject.SetActive(false);
+
         // release the projectile back to the pool
         pool.Release(this);
     }
