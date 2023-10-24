@@ -70,7 +70,7 @@ MonoBehaviour:
     overrideShaderPassIndex: 0
     overrideMode: 1
     overrideDepthState: 0
-    depthCompareFunction: 4
+    depthCompareFunction: 2
     enableWrite: 1
     stencilSettings:
       overrideStencilState: 0
@@ -162,12 +162,12 @@ MonoBehaviour:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
     hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
   m_RendererFeatures:
+  - {fileID: 6255318085032282598}
+  - {fileID: -4454002202301545270}
   - {fileID: -395520734796750225}
   - {fileID: -5490653806940079212}
   - {fileID: -1728536143674610781}
-  - {fileID: 6255318085032282598}
-  - {fileID: -4454002202301545270}
-  m_RendererFeatureMap: 6f6223bdfcd382fa94bbb00c7447cdb3a3ebd916890103e8e6096dffa75acf56ca440267983430c2
+  m_RendererFeatureMap: e6096dffa75acf56ca440267983430c26f6223bdfcd382fa94bbb00c7447cdb3a3ebd916890103e8
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
