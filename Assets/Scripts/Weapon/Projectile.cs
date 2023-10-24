@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
     public Impact sparkPrefab;
     private ObjectPool<Impact> projectilePool;
 
-    [SerializeField] private float timeoutDelay = 3f;
+    [SerializeField] private float timeoutDelay = 10f;
 
     private void Awake()
     {
@@ -27,7 +27,7 @@ public class Projectile : MonoBehaviour
 
     public void Deactivate()
     {
-        StartCoroutine(DeactivateRoutine(timeoutDelay));
+        //StartCoroutine(DeactivateRoutine(timeoutDelay));
     }
 
     public void DeactivateImmediately()
