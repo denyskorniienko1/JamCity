@@ -44,7 +44,8 @@ public class ShootWeapon : MonoBehaviour
             if (bullet == null)
                 return;
 
-            bullet.transform.SetPositionAndRotation(muzzlePosition.transform.position, Quaternion.identity);
+            bullet.transform.SetPositionAndRotation(muzzlePosition.transform.position, transform.rotation);
+            bullet.transform.Rotate(0, 180, 0);
             bullet.body.AddForce(direction.normalized * weapon.MuzzleVelocity, ForceMode.Acceleration);
 
             muzzleVisualEffect.Play();
