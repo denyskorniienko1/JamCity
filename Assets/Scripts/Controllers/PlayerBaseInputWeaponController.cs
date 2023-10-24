@@ -29,6 +29,8 @@ public abstract class PlayerBaseInputWeaponController : MonoBehaviour
 
     public void Disable()
     {
+        if (weaponInputActions == null) return;
+
         weaponInputActions.Weapon.FireStart.started -= Shoot;
         weaponInputActions.Weapon.FireStart.performed -= Shoot;
         weaponInputActions.Weapon.FireStart.canceled -= Shoot;
