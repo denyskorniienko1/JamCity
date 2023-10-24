@@ -7,6 +7,7 @@ public class GameManagerM01 : MonoBehaviour
     public GameObject[] RoomList;
     public GameObject[] EnemyList;
     public int PlayerRoomId;
+    public int EnemiesKilled;
 
     // Start is called before the first frame update
     void Start()

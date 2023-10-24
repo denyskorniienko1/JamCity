@@ -368,6 +368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crossbow: {fileID: 7595642462295522405}
   projectilePrefab: {fileID: 7907700585112176908, guid: f8703045c0d649f45871047f6d50884e, type: 3}
+  RoomId: 0
 --- !u!114 &9173937289462242407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,7 +408,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _value: 100
+  _value: 60
 --- !u!114 &7355886136096267110
 MonoBehaviour:
   m_ObjectHideFlags: 0
