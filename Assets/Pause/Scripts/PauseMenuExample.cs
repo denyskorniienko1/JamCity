@@ -25,11 +25,17 @@ public class PauseMenuExample : MonoBehaviour {
     public void RestartGame()
     {
         SumPause.Status = false; // Set pause status to false
-        SceneManager.LoadScene("Chamber");
+        SceneManager.LoadScene("M01");
     }
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void QuitToMenu()
+    {
+        SumPause.Status = false;
+        SceneManager.LoadScene("MainMenu");
     }
 
     // Add/Remove the event listeners

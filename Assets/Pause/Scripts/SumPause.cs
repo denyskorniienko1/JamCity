@@ -61,6 +61,10 @@ public class SumPause : MonoBehaviour {
         // Listen for escape key and pause if needed
         if (detectEscapeKey && Input.GetKeyDown(KeyCode.Escape))
             TogglePause();
+
+
+        if (Input.GetKeyDown(KeyCode.F))
+            TogglePause();
     }
 
     /// <summary>
