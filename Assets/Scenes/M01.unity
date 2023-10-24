@@ -2075,6 +2075,7 @@ MonoBehaviour:
   - {fileID: 3747759612318592089, guid: 7efa1900cde532644aba966edc3391d3, type: 3}
   - {fileID: 5480994241825973912, guid: 091f37127d8aaff47823e759a36009bd, type: 3}
   PlayerRoomId: -1
+  EnemiesKilled: 0
 --- !u!4 &75846339
 Transform:
   m_ObjectHideFlags: 0
@@ -6151,7 +6152,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 973509674}
+  - {fileID: 1657449746}
   - {fileID: 735614996}
   - {fileID: 1645882557}
   m_Father: {fileID: 1116313086}
@@ -37373,7 +37374,7 @@ Transform:
   - {fileID: 1126650389}
   - {fileID: 208203732}
   - {fileID: 1300596406}
-  m_Father: {fileID: 180394885}
+  m_Father: {fileID: 1657449746}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &975153710
 PrefabInstance:
@@ -57892,6 +57893,38 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 4.1, z: 1.0000002}
   m_Center: {x: 0, y: 2.0500002, z: -0.00000008940697}
+--- !u!1 &1657449745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1657449746}
+  m_Layer: 0
+  m_Name: Spawners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1657449746
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657449745}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 973509674}
+  m_Father: {fileID: 180394885}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1658922416 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 685fd9dc96c5e0545a3f34b2c46ab8a2, type: 3}
