@@ -80,6 +80,7 @@ public class RougeLogic : MonoBehaviour
     public void OnDeath()
     {
         isDead = true;
+        gameManager.EnemiesKilled++;
     }
 
     public void Shot(Vector3 playerPos, Vector3 thisPos)

@@ -67,6 +67,7 @@ public class EnemyController : MonoBehaviour
 
     public void OnDeath()
     {
+        gameManager.EnemiesKilled++;
         isDead = true;
     }
 }
