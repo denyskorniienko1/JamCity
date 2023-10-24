@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManagerM01 : MonoBehaviour
 {
@@ -60,5 +61,17 @@ public class GameManagerM01 : MonoBehaviour
     {
         int randomInt = Random.Range(0, EnemyList.Length);
         return EnemyList[randomInt];
+    }
+
+    public void OnDeath()
+    {
+        StartCoroutine(ChangeSceneOnDeath());
+    }
+
+    IEnumerator ChangeSceneOnDeath()
+    {
+        yield return new WaitForSeconds(4f);
+
+        SceneManager.LoadScene("MainMenu");
     }
 }
